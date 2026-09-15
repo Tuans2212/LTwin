@@ -20,7 +20,7 @@
 - .NET 8
 
 ## Cách chạy
-1. Mở file `Lab01/Lab01.sln` bằng Visual Studio.
+1. Mở file `Lab01/Lab01.slnx` bằng Visual Studio.
 2. Build solution.
 3. Nhấn F5 để chạy chương trình.
 
