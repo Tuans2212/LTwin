@@ -33,36 +33,31 @@ Chương trình Console C# quản lý một mảng số nguyên. Chương trình
 - Số lượng phần tử `n` phải là số nguyên dương (n > 0); nếu nhập 0 hoặc số âm, chương trình yêu cầu nhập lại.
 - Các chức năng xử lý trên mảng (xuất mảng, tính tổng, tìm max/min, đếm chẵn/lẻ, sắp xếp, tìm kiếm) chỉ thực hiện được sau khi đã nhập mảng; nếu chưa nhập mảng, chương trình sẽ thông báo và không thực hiện.
 
-
 ## Hình ảnh màn hình
 
-
 ### Menu chương trình
-![Menu](screenshots/menu.png)
+![Menu](Screenshots02/menu.png)
 
 ### Nhập mảng
-![Nhap mang](screenshots/nhap_mang.png)
+![Nhap mang](Screenshots02/input.png)
 
 ### Xuất mảng
-![Xuat mang](screenshots/xuat_mang.png)
+![Xuat mang](Screenshots02/xuatmang.png)
 
 ### Tính tổng
-![Tinh tong](screenshots/tinh_tong.png)
+![Tinh tong](Screenshots02/tinhtong.png)
 
 ### Giá trị min và max
-![Gia tri min va max](screenshots/Gia_tri_min_va_max.png)
+![Gia tri min va max](Screenshots02/min_max.png)
 
 ### Số lượng phần tử chẵn và lẻ
-![So luong phan tu chan và le](screenshots/dem_chan_va_le.png)
+![So luong phan tu chan và le](Screenshots02/chan_le.png)
 
 ### Sắp xếp tăng dần
-![Sap xep](screenshots/sap_xep.png)
+![Sap xep](Screenshots02/sapxep_tangdan.png)
 
 ### Tìm kiếm
-![Tim kiem](screenshots/tim_kiem1.png)
-
-### Tìm kiếm
-![Tim kiem](screenshots/tim_kiem2.png)
+![Tim kiem](Screenshots02/timkiem.png)
 
 ### Xử lý nhập sai (n <= 0, chưa nhập mảng, nhập chữ vào menu)
-![Xu ly loi](screenshots/xu_ly_loi.png)
+![Xu ly loi](Screenshots02/sai_input.png)
