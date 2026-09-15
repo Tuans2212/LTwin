@@ -1,5 +1,7 @@
 # Lab 01 - Ứng dụng thông tin cá nhân
 
+**Sinh viên thực hiện:** Nguyễn Văn Tuấn
+
 ## Mô tả
 Ứng dụng C# WinForms cho phép nhập, kiểm tra tính hợp lệ và hiển thị thông tin cá nhân cơ bản của sinh viên, đồng thời tích hợp tính năng tự động tính toán tuổi thực tế.
 
@@ -7,7 +9,7 @@
 - Nhập dữ liệu: Họ tên, Năm sinh, Email.
 - Tự động tính toán và hiển thị ngay Tuổi khi người dùng nhập Năm sinh.
 - Chọn Giới tính (Nam/Nữ) và Khoa/Lớp (từ danh sách xổ xuống).
-- Bắt lỗi và cảnh báo khi bỏ trống bất kỳ trường thông tin nào (chưa chọn giới tính, khoa...).
+- Bắt lỗi và cảnh báo khi bỏ trống thông tin (Họ tên, Email, Năm sinh, Giới tính, Khoa).
 - Bắt lỗi khi nhập Năm sinh sai định dạng (nhập chữ) hoặc ngoài khoảng hợp lệ (1900 - năm hiện tại).
 - Hiển thị thông báo tổng hợp thông tin sinh viên thành công.
 - Xóa trắng toàn bộ dữ liệu trên form để nhập mới.
@@ -15,7 +17,7 @@
 
 ## Công nghệ sử dụng
 - C# WinForms
-- .NET 8 (hoặc phiên bản .NET Framework tương ứng)
+- .NET 8
 
 ## Cách chạy
 1. Mở file `Lab01/Lab01.sln` bằng Visual Studio.
@@ -24,20 +26,20 @@
 
 ## Hình ảnh minh họa
 
-### Màn hình chính (Giao diện khởi tạo)
-![Man hinh chinh](screenshots/man_hinh_chinh.png)
+### Cảnh báo khi bỏ trống Họ tên, Email, Năm sinh
+![Bo trong ho ten, email, nam sinh](screenshots/bo_trong_hoten_email_namsinh.png)
 
-### Tính năng tự động tính tuổi khi nhập năm sinh
-![Tu dong tinh tuoi](screenshots/tu_dong_tinh_tuoi.png)
+### Cảnh báo khi chưa chọn Giới tính
+![Chua chon gioi tinh](screenshots/chua_chon_gioi_tinh.png)
 
-### Cảnh báo khi bỏ trống thông tin hoặc chưa chọn giới tính/khoa
-![Canh bao de trong](screenshots/canh_bao_de_trong.png)
+### Cảnh báo khi chưa chọn Khoa/Lớp
+![Chua chon khoa lop](screenshots/chua_chon_khoa_lop.png)
 
-### Cảnh báo khi năm sinh không hợp lệ (chứa chữ hoặc sai khoảng)
-![Canh bao nam sinh](screenshots/canh_bao_nam_sinh.png)
+### Cảnh báo khi Năm sinh không hợp lệ
+![Nam sinh khong hop le](screenshots/namsinh_khong_hop_le.png)
 
 ### Hiển thị kết quả thành công
-![Hien thi ket qua](screenshots/hien_thi_ket_qua.png)
+![Ket qua](screenshots/ketqua.png)
 
 ### Xác nhận thoát chương trình
-![Xac nhan thoat](screenshots/xac_nhan_thoat.png)
+![Xac nhan thoat](screenshots/Exit.png)
