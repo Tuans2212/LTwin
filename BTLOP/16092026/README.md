@@ -27,16 +27,16 @@
 ## Hình ảnh minh họa
 
 ### Giao diện Menu chính
-![Giao dien Menu](screenshots/Menu.png)
+![Giao dien Menu](HinhAnh/Menu.png)
 
 ### Xuất danh sách nhân viên
-![Xuat danh sach](screenshots/XuatDanhSachNV.png)
+![Xuat danh sach](HinhAnh/XuatDanhSachNV.png)
 
 ### Tìm nhân viên theo mã
-![Tim nhan vien theo ma](screenshots/TimNV.png)
+![Tim nhan vien theo ma](HinhAnh/TimNV.png)
 
 ### Tìm nhân viên có lương cao nhất
-![Nhan vien luong cao nhat](screenshots/NVLuongCaoNhat.png)
+![Nhan vien luong cao nhat](HinhAnh/NVLuongCaoNhat.png)
 
 ### Tính tổng lương công ty phải trả
-![Tong luong](screenshots/TongLuong.png)
+![Tong luong](HinhAnh/TongLuong.png)
