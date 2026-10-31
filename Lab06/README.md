@@ -6,44 +6,42 @@
 - **Lớp:** 50.01.CNTT.A
 - **Môn học:** Lập trình trên Windows (COMP1019)
 
-## 2. Mô tả bài làm
-Đây là project Lab 06 viết bằng C# (WinForms). Bài này yêu cầu quản lý danh sách sản phẩm của cửa hàng. Dữ liệu được mình lưu tạm trong bộ nhớ (dùng `BindingList`) chứ chưa kết nối Database, chủ yếu để thực hành các thao tác trên lưới `DataGridView` và xử lý giao diện.
+## 2. Mô tả dự án
+Project Lab 06 xây dựng bằng C# (WinForms), mô phỏng ứng dụng quản lý danh sách sản phẩm cơ bản. Dữ liệu được lưu trữ tạm thời trong bộ nhớ bằng `BindingList`, tập trung vào việc thực hành các thao tác trực tiếp trên lưới `DataGridView` và xử lý các control giao diện nâng cao.
 
-## 3. Hướng dẫn thao tác trên phần mềm (Cách dùng)
+## 3. Hướng dẫn thao tác
+Giao diện chia làm hai khu vực chính: Bảng danh sách sản phẩm ở trên và Khu vực nhập thông tin ở dưới. Các chức năng điều khiển được tích hợp trên thanh công cụ (ToolStrip).
 
-Giao diện được chia làm 2 phần chính: Bảng danh sách ở trên và Khu vực nhập liệu ở dưới. Các chức năng chính đều nằm trên thanh công cụ (ToolStrip) trên cùng.
+- **Thêm sản phẩm mới:** 
+  1. Điền thông tin vào các trường bên dưới (Mã SP, Tên SP, Loại, Đơn giá, Số lượng, Ngày nhập).
+  2. Nhấn nút **Chọn Ảnh** để tải hình minh họa lên (nếu có).
+  3. Nhấn biểu tượng **Thêm (+)** trên thanh công cụ. Dữ liệu sẽ lập tức được đẩy lên bảng.
+  *(Lưu ý: Nếu bỏ trống thông tin hoặc nhập trùng Mã SP, hệ thống sẽ hiện chấm đỏ báo lỗi ngay tại ô nhập liệu và từ chối lưu).*
 
-- **Cách Thêm sản phẩm mới:** 
-  1. Bạn nhập đầy đủ thông tin vào các ô ở nửa dưới form (Mã SP, Tên SP, Loại, Giá...).
-  2. Bấm nút **Chọn Ảnh** để chèn hình minh họa nếu muốn.
-  3. Bấm vào icon **Thêm (dấu +)** trên thanh công cụ. Sản phẩm sẽ tự động nhảy lên bảng.
-  *(Lưu ý: Nếu nhập trùng Mã SP hoặc bỏ trống Tên, phần mềm sẽ hiện chấm đỏ báo lỗi ngay tại ô đó chứ không cho thêm).*
+- **Cập nhật thông tin (Sửa):**
+  1. Click chọn một dòng sản phẩm bất kỳ trên bảng dữ liệu.
+  2. Thông tin (bao gồm cả hình ảnh) sẽ tự động nạp xuống các ô nhập liệu bên dưới.
+  3. Tiến hành chỉnh sửa nội dung và nhấn biểu tượng **Sửa** trên thanh công cụ.
 
-- **Cách Sửa thông tin:**
-  1. Click chuột vào một dòng sản phẩm bất kỳ trên bảng.
-  2. Toàn bộ thông tin (kể cả hình ảnh) sẽ tự động nảy xuống các ô nhập liệu bên dưới.
-  3. Bạn sửa lại thông tin ở các ô dưới, sau đó bấm icon **Sửa** trên thanh công cụ để cập nhật.
-
-- **Cách Xóa sản phẩm:**
-  1. Click chọn dòng muốn xóa trên bảng.
-  2. Bấm icon **Xóa (dấu X màu đỏ)** trên thanh công cụ (hoặc click chuột phải chọn Xóa).
-  3. Sẽ có một hộp thoại hiện lên hỏi "Bạn có chắc chắn muốn xóa không?" để tránh bấm nhầm. Chọn Yes để xóa.
+- **Xóa sản phẩm:**
+  1. Click chọn dòng sản phẩm cần xóa trên bảng.
+  2. Nhấn biểu tượng **Xóa (dấu X đỏ)** trên thanh công cụ hoặc click chuột phải chọn lệnh Xóa.
+  3. Hộp thoại xác nhận sẽ hiện ra để tránh thao tác nhầm. Chọn "Yes" để hoàn tất.
 
 - **Tìm kiếm nhanh:**
-  Bạn gõ từ khóa (mã hoặc tên sản phẩm) vào ô trống dài trên thanh công cụ, rồi bấm vào nút **Kính lúp**. Bảng sẽ tự động lọc ra các sản phẩm trùng khớp.
+  Nhập từ khóa (mã hoặc tên sản phẩm) vào ô trống trên thanh công cụ, sau đó nhấn biểu tượng **Kính lúp**. Bảng dữ liệu sẽ tự động lọc ra các kết quả trùng khớp.
 
-## 4. Một số điểm cộng mình đã xử lý trong code
-- **Tự động đồng bộ:** Mình dùng `BindingList` làm nguồn cho DataGridView, nên khi Thêm/Sửa/Xóa xong là bảng tự động thay đổi, không cần phải viết hàm load lại lưới thủ công.
-- **Bắt lỗi thông minh:** Thay vì dùng `MessageBox` báo lỗi ầm ĩ, mình dùng `ErrorProvider`. Nhập sai ở đâu (ví dụ đơn giá âm, nhập ngày ở tương lai), nó sẽ nháy chấm đỏ ngay bên cạnh ô đó.
-- **Thanh trạng thái:** Dưới cùng góc trái màn hình, mình có làm một thanh `StatusStrip` để đếm tổng số lượng sản phẩm hiện có và báo cho người dùng biết họ vừa làm thao tác gì (ví dụ: "Đã chọn ảnh sản phẩm | Số sản phẩm: 3").
+## 4. Các điểm nhấn kỹ thuật
+- **Đồng bộ dữ liệu tự động:** Sử dụng `BindingList` làm `DataSource` cho DataGridView. Bảng dữ liệu sẽ tự động làm mới ngay khi có thao tác Thêm, Sửa, hoặc Xóa mà không cần viết hàm load lại thủ công.
+- **Validation trực quan:** Sử dụng `ErrorProvider` để kiểm tra tính hợp lệ của dữ liệu đầu vào (số âm, ngày tương lai, mã trùng), giúp cảnh báo lỗi chính xác vị trí mà không gây gián đoạn trải nghiệm như `MessageBox`.
+- **Phản hồi trạng thái liên tục:** Thanh `StatusStrip` dưới cùng góc trái luôn cập nhật thao tác vừa thực hiện và đếm tổng số lượng sản phẩm hiện có trong danh sách.
 
-## 5. Cách chạy project
-1. Giải nén file nộp bài.
+## 5. Hướng dẫn chạy chương trình
+1. Giải nén thư mục bài làm.
 2. Mở file `.sln` bằng Visual Studio.
-3. Nhấn `Ctrl + Shift + B` để Build project cho mượt.
-4. Bấm `F5` (hoặc nút Start) để chạy form. 
-5. Bạn có thể bấm thử vào các dòng có sẵn (như Chuột không dây, Bút bi) để xem dữ liệu đẩy xuống dưới nhé!
+3. Nhấn tổ hợp `Ctrl + Shift + B` để Build project.
+4. Nhấn `F5` hoặc nút Start để khởi chạy ứng dụng.
 
-## 6. Hình ảnh Demo giao diện
+## 6. Hình ảnh minh họa
 
 ![Giao diện Quản lý](Hình%20Ảnh%20Lab06/Giao%20Diện.png)
