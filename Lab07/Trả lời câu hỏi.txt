@@ -1,0 +1,13 @@
+Câu 1: Thế nào là ứng dụng MDI (Multiple Document Interface)? Làm sao để tránh mở trùng form con trong MDI?
+- Khái niệm: Ứng dụng MDI là giao diện đa tài liệu, cho phép mở nhiều form con (Child Form) nằm bên trong một form cha (MdiContainer).
+- Cách chống mở trùng form: 
+  + Em viết một hàm kiểm tra trong form chính (FrmMain) bằng cách duyệt qua danh sách các form con đang hiển thị (this.MdiChildren). 
+  + Nếu form cần mở đã tồn tại trong mảng thì gọi phương thức .Activate() để đưa nó lên trên. Ngược lại, nếu chưa có thì mới khởi tạo new, gán MdiParent = this rồi hiển thị lên.
+
+Câu 2: Sự khác nhau giữa List<T> và BindingList<T> khi hiển thị dữ liệu lên DataGridView?
+- List<T> chỉ là danh sách thuần túy lưu trữ dữ liệu trong bộ nhớ. Khi dữ liệu thay đổi (thêm/sửa/xóa), DataGridView không tự động cập nhật mà mình phải thủ công gán lại DataSource hoặc gọi hàm Refresh().
+- BindingList<T> hỗ trợ cơ chế thông báo thay đổi (Notification). Khi có thao tác thêm, xóa phần tử, DataGridView sẽ tự động đồng bộ và cập nhật giao diện ngay lập tức mà không cần viết code load lại bảng thủ công, giúp code gọn hơn rất nhiều.
+
+Câu 3: Tại sao form đăng nhập (Login) lại dùng ShowDialog() thay vì Show()?
+- Em dùng ShowDialog() vì phương thức này mở form ở chế độ Modal (chặn các thao tác trên form gọi cho đến khi form đăng nhập đóng lại). 
+- Điều này giúp kiểm soát luồng chương trình chặt chẽ hơn: Bắt buộc người dùng phải đăng nhập đúng tài khoản và mật khẩu, trả về DialogResult.OK thì chương trình mới cho phép mở form chính (FrmMain), nếu bấm thoát hoặc sai thì hủy chương trình luôn.
