@@ -1,0 +1,129 @@
+IF DB_ID('QLSinhVienLab12') IS NOT NULL
+BEGIN
+    ALTER DATABASE QLSinhVienLab12 SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
+    DROP DATABASE QLSinhVienLab12;
+END
+GO
+
+CREATE DATABASE QLSinhVienLab12;
+GO
+
+USE QLSinhVienLab12;
+GO
+
+CREATE TABLE LOP (
+    MaLop NVARCHAR(20) PRIMARY KEY,
+    TenLop NVARCHAR(100) NOT NULL
+);
+
+CREATE TABLE SINHVIEN (
+    MaSV NVARCHAR(20) PRIMARY KEY,
+    HoTen NVARCHAR(100) NOT NULL,
+    NgaySinh DATE NULL,
+    MaLop NVARCHAR(20) NOT NULL,
+    CONSTRAINT FK_SINHVIEN_LOP FOREIGN KEY (MaLop) REFERENCES LOP(MaLop)
+);
+
+CREATE TABLE MONHOC (
+    MaMon NVARCHAR(20) PRIMARY KEY,
+    TenMon NVARCHAR(100) NOT NULL,
+    SoTinChi INT NOT NULL CHECK (SoTinChi > 0)
+);
+
+CREATE TABLE KETQUA (
+    MaSV NVARCHAR(20) NOT NULL,
+    MaMon NVARCHAR(20) NOT NULL,
+    Diem FLOAT NOT NULL CHECK (Diem >= 0 AND Diem <= 10),
+    GhiChu NVARCHAR(255) NULL,
+    CONSTRAINT PK_KETQUA PRIMARY KEY (MaSV, MaMon),
+    CONSTRAINT FK_KETQUA_SINHVIEN FOREIGN KEY (MaSV) REFERENCES SINHVIEN(MaSV),
+    CONSTRAINT FK_KETQUA_MONHOC FOREIGN KEY (MaMon) REFERENCES MONHOC(MaMon)
+);
+GO
+
+INSERT INTO LOP (MaLop, TenLop) VALUES
+(N'COMP48A', N'Công nghệ thông tin K48 - Lớp A'),
+(N'COMP48B', N'Công nghệ thông tin K48 - Lớp B'),
+(N'SPTIN48', N'Sư phạm Tin học K48');
+
+INSERT INTO MONHOC (MaMon, TenMon, SoTinChi) VALUES
+(N'COMP1019', N'Lập trình trên Windows', 3),
+(N'COMP1017', N'Cơ sở lập trình', 3),
+(N'COMP1044', N'Cơ sở dữ liệu', 4),
+(N'COMP1025', N'Cấu trúc dữ liệu và giải thuật', 4);
+
+INSERT INTO SINHVIEN (MaSV, HoTen, NgaySinh, MaLop) VALUES
+(N'4801104001', N'Nguyễn Văn Tuấn', '2005-11-20', N'COMP48A'),
+(N'4801104002', N'Lê Nguyệt Anh', '2005-08-14', N'COMP48A'),
+(N'4801104003', N'Trần Hoàng Nam', '2005-02-19', N'COMP48A'),
+(N'4801104004', N'Phạm Thị Mai Phương', '2005-06-25', N'COMP48A'),
+(N'4801104005', N'Võ Minh Khang', '2005-12-03', N'COMP48A'),
+(N'4801104006', N'Đặng Quốc Bảo', '2005-04-10', N'COMP48B'),
+(N'4801104007', N'Bùi Thanh Trúc', '2005-09-22', N'COMP48B'),
+(N'4801104008', N'Hoàng Gia Huy', '2005-01-30', N'COMP48B'),
+(N'4801104009', N'Ngô Bảo Châu', '2005-07-15', N'SPTIN48'),
+(N'4801104010', N'Lý Gia Hân', '2005-03-28', N'SPTIN48');
+
+INSERT INTO KETQUA (MaSV, MaMon, Diem, GhiChu) VALUES
+(N'4801104001', N'COMP1019', 8.5, N'Hoàn thành tốt bài lab'),
+(N'4801104002', N'COMP1019', 9.0, N'Đi học đầy đủ'),
+(N'4801104003', N'COMP1019', 7.0, N''),
+(N'4801104006', N'COMP1017', 8.0, N'Tích cực phát biểu');
+GO
+
+CREATE OR ALTER PROCEDURE sp_Lop_GetAll
+AS
+BEGIN
+    SELECT MaLop, TenLop
+    FROM LOP
+    ORDER BY MaLop;
+END;
+GO
+
+CREATE OR ALTER PROCEDURE sp_MonHoc_GetAll
+AS
+BEGIN
+    SELECT MaMon, TenMon, SoTinChi
+    FROM MONHOC
+    ORDER BY TenMon;
+END;
+GO
+
+CREATE OR ALTER PROCEDURE sp_KetQua_GetByLopMon
+    @MaLop NVARCHAR(20),
+    @MaMon NVARCHAR(20)
+AS
+BEGIN
+    SELECT sv.MaSV,
+           sv.HoTen,
+           CAST(ISNULL(kq.Diem, 0) AS FLOAT) AS Diem,
+           ISNULL(kq.GhiChu, N'') AS GhiChu
+    FROM SINHVIEN sv
+    LEFT JOIN KETQUA kq
+        ON sv.MaSV = kq.MaSV AND kq.MaMon = @MaMon
+    WHERE sv.MaLop = @MaLop
+    ORDER BY sv.MaSV;
+END;
+GO
+
+CREATE OR ALTER PROCEDURE sp_KetQua_Save
+    @MaSV NVARCHAR(20),
+    @MaMon NVARCHAR(20),
+    @Diem FLOAT,
+    @GhiChu NVARCHAR(255)
+AS
+BEGIN
+    IF EXISTS (SELECT 1 FROM KETQUA WHERE MaSV = @MaSV AND MaMon = @MaMon)
+    BEGIN
+        UPDATE KETQUA
+        SET Diem = @Diem,
+            GhiChu = @GhiChu
+        WHERE MaSV = @MaSV AND MaMon = @MaMon;
+    END
+    ELSE
+    BEGIN
+        INSERT INTO KETQUA (MaSV, MaMon, Diem, GhiChu)
+        VALUES (@MaSV, @MaMon, @Diem, @GhiChu);
+    END
+END;
+GO
