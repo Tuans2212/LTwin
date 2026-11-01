@@ -1,0 +1,15 @@
+C:\Users\PC\source\repos\lab02console\bin\Debug\net10.0\lab02console.exe
+C:\Users\PC\source\repos\lab02console\bin\Debug\net10.0\lab02console.deps.json
+C:\Users\PC\source\repos\lab02console\bin\Debug\net10.0\lab02console.runtimeconfig.json
+C:\Users\PC\source\repos\lab02console\bin\Debug\net10.0\lab02console.dll
+C:\Users\PC\source\repos\lab02console\bin\Debug\net10.0\lab02console.pdb
+C:\Users\PC\source\repos\lab02console\obj\Debug\net10.0\lab02console.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\PC\source\repos\lab02console\obj\Debug\net10.0\lab02console.AssemblyInfoInputs.cache
+C:\Users\PC\source\repos\lab02console\obj\Debug\net10.0\lab02console.AssemblyInfo.cs
+C:\Users\PC\source\repos\lab02console\obj\Debug\net10.0\lab02console.csproj.CoreCompileInputs.cache
+C:\Users\PC\source\repos\lab02console\obj\Debug\net10.0\lab02console.dll
+C:\Users\PC\source\repos\lab02console\obj\Debug\net10.0\refint\lab02console.dll
+C:\Users\PC\source\repos\lab02console\obj\Debug\net10.0\lab02console.pdb
+C:\Users\PC\source\repos\lab02console\obj\Debug\net10.0\lab02console.genruntimeconfig.cache
+C:\Users\PC\source\repos\lab02console\obj\Debug\net10.0\ref\lab02console.dll
+C:\Users\PC\source\repos\lab02console\obj\Debug\net10.0\lab02con.840CF0E6.Up2Date
