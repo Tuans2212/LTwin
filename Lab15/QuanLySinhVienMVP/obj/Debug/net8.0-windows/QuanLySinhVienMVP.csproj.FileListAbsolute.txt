@@ -1,0 +1,15 @@
+C:\Users\Admin\.gemini\antigravity\scratch\Lab15\QuanLySinhVienMVP\bin\Debug\net8.0-windows\QuanLySinhVienMVP.exe
+C:\Users\Admin\.gemini\antigravity\scratch\Lab15\QuanLySinhVienMVP\bin\Debug\net8.0-windows\QuanLySinhVienMVP.deps.json
+C:\Users\Admin\.gemini\antigravity\scratch\Lab15\QuanLySinhVienMVP\bin\Debug\net8.0-windows\QuanLySinhVienMVP.runtimeconfig.json
+C:\Users\Admin\.gemini\antigravity\scratch\Lab15\QuanLySinhVienMVP\bin\Debug\net8.0-windows\QuanLySinhVienMVP.dll
+C:\Users\Admin\.gemini\antigravity\scratch\Lab15\QuanLySinhVienMVP\bin\Debug\net8.0-windows\QuanLySinhVienMVP.pdb
+C:\Users\Admin\.gemini\antigravity\scratch\Lab15\QuanLySinhVienMVP\obj\Debug\net8.0-windows\QuanLySinhVienMVP.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\.gemini\antigravity\scratch\Lab15\QuanLySinhVienMVP\obj\Debug\net8.0-windows\QuanLySinhVienMVP.AssemblyInfoInputs.cache
+C:\Users\Admin\.gemini\antigravity\scratch\Lab15\QuanLySinhVienMVP\obj\Debug\net8.0-windows\QuanLySinhVienMVP.AssemblyInfo.cs
+C:\Users\Admin\.gemini\antigravity\scratch\Lab15\QuanLySinhVienMVP\obj\Debug\net8.0-windows\QuanLySinhVienMVP.csproj.CoreCompileInputs.cache
+C:\Users\Admin\.gemini\antigravity\scratch\Lab15\QuanLySinhVienMVP\obj\Debug\net8.0-windows\QuanLySinhVienMVP.dll
+C:\Users\Admin\.gemini\antigravity\scratch\Lab15\QuanLySinhVienMVP\obj\Debug\net8.0-windows\refint\QuanLySinhVienMVP.dll
+C:\Users\Admin\.gemini\antigravity\scratch\Lab15\QuanLySinhVienMVP\obj\Debug\net8.0-windows\QuanLySinhVienMVP.pdb
+C:\Users\Admin\.gemini\antigravity\scratch\Lab15\QuanLySinhVienMVP\obj\Debug\net8.0-windows\QuanLySinhVienMVP.genruntimeconfig.cache
+C:\Users\Admin\.gemini\antigravity\scratch\Lab15\QuanLySinhVienMVP\obj\Debug\net8.0-windows\ref\QuanLySinhVienMVP.dll
+C:\Users\Admin\.gemini\antigravity\scratch\Lab15\QuanLySinhVienMVP\obj\Debug\net8.0-windows\QuanLySi.EBCEC2F2.Up2Date

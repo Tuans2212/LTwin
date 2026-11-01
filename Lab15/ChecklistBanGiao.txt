@@ -1,0 +1,31 @@
+================================================================================
+CHECKLIST KIỂM THỬ VÀ BÀN GIAO ĐỒ ÁN / BÀI TẬP CUỐI KỲ (COMP1019 - LAB 15)
+Sinh viên: Nguyễn Văn Tuấn - Lớp: 24CT1
+================================================================================
+
+I. KIỂM TRA KIẾN TRÚC MVP & QUY TẮC BẮT BUỘC
+[x] 1. Tách riêng thư mục Models chứa class dữ liệu `Student.cs`.
+[x] 2. Tách riêng thư mục Views chứa interface `IStudentView.cs` và `FrmStudent.cs` thực thi interface đó.
+[x] 3. Tách riêng thư mục Presenters chứa `StudentPresenter.cs` xử lý toàn bộ logic nghiệp vụ.
+[x] 4. Tách riêng thư mục Repositories chứa `IStudentRepository.cs` và `StudentRepository.cs` quản lý `List<Student>`.
+[x] 5. Không viết xử lý thêm/xóa/tìm kiếm trực tiếp trong sự kiện Button Click của Form.
+[x] 6. Sự kiện Button Click trên `FrmStudent` chỉ gọi phương thức tương ứng của `_presenter` (`AddStudent`, `DeleteStudent`, `SearchStudents`, `LoadStudents`, `ResetForm`).
+[x] 7. `StudentPresenter` hoàn toàn không tham chiếu hay truy cập trực tiếp `TextBox`, `ComboBox` hoặc `DataGridView`.
+[x] 8. `StudentPresenter` chỉ giao tiếp với `FrmStudent` thông qua interface `IStudentView`.
+
+II. KIỂM TRA CHỨC NĂNG & DỮ LIỆU
+[x] 1. Form có đủ từ 3 ô nhập liệu trở lên (Mã SV, Họ tên, Lớp biên chế, Điểm trung bình, Từ khóa tìm kiếm) và 1 `DataGridView`.
+[x] 2. Dữ liệu mẫu khởi tạo sẵn 10 sinh viên ngay khi mở chương trình để giảng viên kiểm tra trực tiếp.
+[x] 3. Chức năng Load danh sách hoạt động đúng.
+[x] 4. Chức năng Thêm sinh viên hoạt động đúng và tự động cập nhật bảng + thẻ thống kê.
+[x] 5. Chức năng Xóa sinh viên theo mã hoạt động đúng.
+[x] 6. Chức năng Tìm kiếm theo tên hoặc mã sinh viên hoạt động đúng (không phân biệt chữ hoa/thường).
+[x] 7. Kiểm tra đầy đủ lỗi: dữ liệu rỗng, điểm sai kiểu số, điểm ngoài khoảng [0 - 10], và trùng mã sinh viên.
+[x] 8. Hiển thị thông báo kết quả rõ ràng cho người dùng sau mỗi thao tác.
+
+III. KIỂM TRA ĐÓNG GÓI & HỒ SƠ BÀN GIAO
+[x] 1. Project biên dịch thành công (0 Error, 0 Warning) trên Visual Studio / .NET 8.0 Windows.
+[x] 2. Đính kèm đầy đủ ảnh chụp màn hình các chức năng chạy thực tế trong thư mục hình ảnh.
+[x] 3. Đính kèm file `README.txt` và `README.md` hướng dẫn cách chạy và thông tin môi trường.
+[x] 4. Đính kèm file `TestCases.txt` gồm tối thiểu 5 trường hợp kiểm thử (đã lập 8 TC).
+[x] 5. Đính kèm file `ChecklistBanGiao.txt` rà soát toàn bộ yêu cầu trước khi nộp.
