@@ -6,7 +6,7 @@
 
 - **Họ và tên:** Nguyễn Văn Tuấn
 
-- **Lớp:** 24CT1
+- **Lớp:** K50CNTTA
 
 - **Môn học:** Lập trình trên Windows (COMP1019)
 
